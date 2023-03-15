@@ -1,0 +1,19 @@
+:root {
+    --primary-color: #f2f3ea;
+    --secondary-color: #2C5C59;
+    --third-color: #98851E;
+}
+
+.footer_color {
+    background-color: var(--primary-color);
+}
+
+ul li a:link,
+ul li a:visited,
+ul li i {
+    color: var(--third-color) !important;
+}
+
+h5 {
+    color: var(--secondary-color) !important;
+}

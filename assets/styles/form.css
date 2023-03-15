@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
+
+:root {
+    --primary-color: #f2f3ea;
+    --secondary-color: #2C5C59;
+    --third-color: #98851E;
+    --border-radius: 10px;
+}
+
+body {
+    background-color: var(--primary-color) !important;
+    font-family: 'Roboto Flex', sans-serif !important;
+}
+.contain-forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+.accroche {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-box {
+    padding: 20px 20px;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    width: 90%;
+}
+
+h1 {
+    color: var(--third-color) !important;
+    font-size: 20px !important;
+    text-transform: uppercase;
+}
+
+.container-connexion {
+    position: absolute;
+    width: 350px;
+    height: 330px;
+    left: 20px;
+    top: 140px;
+}
+
+form > div {
+    padding: 5px 0;
+    margin: 10px 0;
+}
+
+form > div > .input {
+    border: 3px solid var(--third-color);
+    padding: 10px 20px;
+}
+
+form > div > .textarea {
+    border: 3px solid var(--third-color);
+    padding: 10px 20px;
+}
+
+input::placeholder {
+    color: var(--third-color) !important;
+    font-size: 13px;
+}
+
+.textarea::placeholder {
+    color: var(--third-color) !important;
+    font-size: 13px;
+}
+
+.btn-connexion {
+    width: 100%;
+    background: #98851E;
+    border: 2px solid #F2F3EA;
+    box-shadow: -2px 2px 4px rgba(242, 243, 234, 0.25);
+    border-radius: 10px;
+    padding: 15px 10px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-box a {
+    padding-top: 10px;
+    color: var(--primary-color);
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+}

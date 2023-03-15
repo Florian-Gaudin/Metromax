@@ -1,0 +1,30 @@
+:root {
+    --primary-color: #f2f3ea;
+    --secondary-color: #2C5C59;
+    --third-color: #98851E;
+}
+
+.modif a:link, .modif a:visited, .modif h4 {
+    text-decoration: none!important;
+    color: #98851E!important;
+}
+
+.modif .text-photo {
+    display: flex;
+    justify-content: center;
+    font-size: 20px !important;
+}
+
+.infoUser {
+    border-color: #98851E!important;
+    border-width: 3px!important;
+    border-radius: 10px;
+}
+.userProfile {
+    background-color: var(--primary-color) !important;
+}
+
+ul li {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
