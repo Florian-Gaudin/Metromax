@@ -22,8 +22,8 @@ session_start();
 
 <!-- : version mobile first / version desktop gérée par l'ajout de "md:" -->
 
-  <nav class="bg-bg1 flex items-center justify-between p-6 md:p-0 lg:px-8" aria-label="Global">
-  <div class="container flex flex-row-reverse md:flex-row flex-wrap items-center md:justify-between">
+  <nav class="bg-bg1 flex items-center justify-between p-6 md:p-0 lg:px-8 w-full" aria-label="Global">
+  <div class="container mx-auto flex flex-row-reverse md:flex-row flex-wrap items-center md:justify-between ">
     <div class="flex md:mr-16 items-center">
         <a href="#" class="-m-1.5 p-1.5 flex flex-row items-center">
             <span class="sr-only">Metro Max</span>
@@ -46,14 +46,14 @@ session_start();
                 <a href="#" class="rounded-lg py-5 md:py-2 px-10 text-primary flex items-center gap-x-1 text-xl leading-6 font-impact uppercase hover:bg-secondary hover:text-third">Populaires</a>
             </li>
             <li> 
-<!-- bouton dropdown -->
+    <!-- bouton dropdown -->
                 <button id="dropdownNavbarButton" data-dropdown-toggle="dropdownNavbar" data-dropdown-trigger="hover" class="rounded-lg py-5 md:py-2 px-10 text-primary flex flex-col md:flex-row items-center gap-x-1 text-xl leading-6 font-impact uppercase hover:bg-secondary hover:text-third" aria-controls="disclosure-1" aria-expanded="false">Catégories
                 <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                 </svg>
                 </button>
 
-<!-- Dropdown menu -->
+    <!-- Dropdown menu -->
             <div id="dropdownNavbar" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                 <ul class="py-5 md:py-2 text-sm bg-bg1" aria-labelledby="dropdownNavbarButton">
                     <li>
