@@ -17,17 +17,17 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
     <script>
         tailwind.config = {
         theme: {
             extend: {
             colors: {
-                mauve:'#C684D8',
-                violet:'#200A21',
-                violettrans:'#471A48',
-                btnviolet:'#321033',
-                btnactive :'#8D6D8E',
-                nav:'#1E051F',
+                primary:'#F2F3EA',
+                bg1:'#000000',
+                bg2:'#252A30',
+                secondary:'#E5941A',
+                third :'#2C5C59',
             },
             fontFamily: {
                 'bungee': ['"Bungee Shade"', 'cursive'],
@@ -63,5 +63,7 @@ session_start();
 
     // require_once("./content/include/footer.php");
     ?>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 </body>
 </html>
