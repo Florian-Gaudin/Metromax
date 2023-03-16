@@ -2,7 +2,6 @@ body {
   overflow-x: hidden;
 }
 
-
 .navLogo {
     font-size: 1.5rem;
     padding: 1rem 0;
@@ -13,11 +12,6 @@ body {
     --primary-color: #f2f3ea;
     --secondary-color: #2C5C59;
     --third-color: #98851E;
-}
-
-#coin i:before {
-  position: absolute;
-  top: 25%;
 }
 
 
@@ -32,32 +26,3 @@ body {
     align-items: center;
     z-index: 999;
   }
-
-.navBottom {
-  background-color: var(--secondary-color);
-}
-
-  
-  #points {
-    font-size: 14px;
-    font-weight: bold;
-    margin-left: 5px;
-    margin-top: 0;  
-  }
-
-  .points {
-    width: 40px;
-    height: 40px;
-  }
-    
-  
-  .element:hover {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-  }
-
-
-   #coin {
-    width: 30px;
-    height: 30px;
-  } 

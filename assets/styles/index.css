@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Bungee Shade', cursive;
+    src: url("../font/Bungee_Shade/BungeeShade-Regular.ttf");
+  }
+
