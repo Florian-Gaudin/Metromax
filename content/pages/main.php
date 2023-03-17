@@ -196,7 +196,7 @@ session_start();
     <h2 class="font-bungee py-5 text-4xl text-primary text-center">Nos sélections</h2>
 
     <!--  Slider 1 : Nos packs séries et films -->
-    <h3 class="font-impact md:py-5 text-3xl text-secondary text-center md:text-left md:pl-[100px]">Nos packs séries et films</h3>
+    <h3 class="font-impact md:py-5 text-2xl text-secondary text-center md:text-left md:pl-[100px] uppercase">Nos packs séries et films</h3>
     <div class="flex items-center justify-center w-full h-full py-5 md:pt-2 sm:py-8 px-4">
             <div class="w-full relative flex items-center justify-center">
                 <button aria-label="slide backward" class="absolute z-30 left-0 ml-10 cursor-pointer" id="prev">
@@ -354,7 +354,7 @@ session_start();
         </div>
 
     <!--  Slider 2 : Vos favoris -->
-    <h3 class="font-impact md:py-5 text-3xl text-secondary text-center md:text-left md:pl-[100px]">Vos favoris</h3>
+    <h3 class="font-impact md:py-5 text-2xl text-secondary text-center md:text-left md:pl-[100px] uppercase">Vos favoris</h3>
     <div class="flex items-center justify-center w-full h-full py-5 md:pt-2 sm:py-8 px-4">
             <div class="w-full relative flex items-center justify-center">
                 <button aria-label="slide backward" class="absolute z-30 left-0 ml-10 cursor-pointer" id="prev2">
@@ -468,7 +468,7 @@ session_start();
 
         
     <!--  Slider 3 : Sélection Oscars 2023 -->
-    <h3 class="font-impact md:py-5 text-3xl text-secondary text-center md:text-left md:pl-[100px]">Les films nominés et gagnants aux Oscars 2023</h3>
+    <h3 class="font-impact md:py-5 text-2xl text-secondary text-center md:text-left md:pl-[100px] uppercase">Les films nominés et gagnants aux Oscars 2023</h3>
     <div class="flex items-center justify-center w-full h-full py-5 md:pt-2 sm:py-8 px-4">
             <div class="w-full relative flex items-center justify-center">
                 <button aria-label="slide backward" class="absolute z-30 left-0 ml-10 cursor-pointer" id="prev3">
