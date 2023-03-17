@@ -18,6 +18,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
         theme: {
@@ -28,6 +29,7 @@ session_start();
                 bg2:'#252A30',
                 secondary:'#E5941A',
                 third :'#2C5C59',
+                card : '#d9d9d9',
             },
             fontFamily: {
                 'bungee': ['"Bungee Shade"', 'cursive'],
@@ -42,6 +44,9 @@ session_start();
                 '4xl': '2rem',
                 '5xl': '3.052rem',
                 },
+            backgroundImage: {
+                'bg-cine': "url('./assets/img/cinema_home.jpg')",
+            }
             }
         }
         }
@@ -59,10 +64,11 @@ session_start();
     //     echo $_SESSION['gestion_admin'] . '<br>';
     // }
 
-    // require_once("./content/pages/main.php");
+    require_once("./content/pages/main.php");
 
-    // require_once("./content/include/footer.php");
+    require_once("./content/include/footer.php");
     ?>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 </body>

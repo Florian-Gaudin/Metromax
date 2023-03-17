@@ -12,7 +12,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metro Max</title>
     <link rel="stylesheet" href="./assets/styles/reset.css">
-    <link rel="stylesheet" href="/assets/styles/navbar.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -55,7 +54,7 @@ session_start();
 
     <!-- Dropdown menu -->
             <div id="dropdownNavbar" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                <ul class="py-5 md:py-2 text-sm bg-bg1" aria-labelledby="dropdownNavbarButton">
+                <ul class="py-5 md:py-2 text-sm bg-bg1 rounded-lg" aria-labelledby="dropdownNavbarButton">
                     <li>
                         <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-secondary">
                             <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg group-hover:bg-secondary">
@@ -107,7 +106,7 @@ session_start();
             <li>
                 <!-- bouton se connecter / s'inscrire version mobile -->
                 <div class="flex flex-col items-center md:hidden">
-                <a href="#" class=""><img class="h-20 w-auto" src="./assets/img/login.png" alt="logo metromax"></a>
+                <a href="#" class=""><img class="h-15 w-auto" src="./assets/img/login.png" alt="login image"></a>
                 <a href="#" class="-mx-3 rounded-lg py-5 px-3 text-base leading-7 text-primary font-impact uppercase">Se connecter / S'inscrire</a>
                 </div>
             </li>
@@ -131,8 +130,8 @@ session_start();
 
     <!-- bouton se connecter / s'inscrire version tablette/desktop -->
     <div class="hidden md:flex flex-col items-center mr-3">
-            <a href="#" class=""><img class="h-20 w-auto" src="./assets/img/login.png" alt="logo metromax"></a>
-            <a href="#" class="-mx-3 rounded-lg py-2 px-3 text-base leading-7 text-primary font-impact uppercase">Se connecter / S'inscrire</a>
+            <a href="#" class=""><img class="h-16 w-auto" src="./assets/img/login.png" alt="login image"></a>
+            <a href="#" class="-mx-3 rounded-lg px-3 text-base leading-7 text-primary font-impact uppercase">Se connecter / S'inscrire</a>
     </div>
   </div>
 </nav>
