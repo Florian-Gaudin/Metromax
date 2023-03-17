@@ -22,7 +22,7 @@ session_start();
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
               <a href="./index.php" class="flex items-center">
-                  <img src="./assets/img/logo_simple.png" class="h-8 mr-3" alt="Metromax Logo" />
+                  <img src="/metromax/assets/img/logo_simple.png" class="h-8 mr-3" alt="Metromax Logo" />
                   <span class="self-center text-2xl font-bungee text-primary whitespace-nowrap">Metro Max</span>
               </a>
           </div>

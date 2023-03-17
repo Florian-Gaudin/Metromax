@@ -26,7 +26,7 @@ session_start();
     <div class="flex items-center">
         <a href="#" class="-m-1.5 p-1.5 flex flex-row items-center">
             <span class="sr-only">Metro Max</span>
-            <img class="h-20 w-auto" src="./assets/img/logo_simple.png" alt="logo metromax">
+            <img class="h-20 w-auto" src="/metromax/assets/img/logo_simple.png" alt="logo metromax">
             <h1 class="font-bungee text-primary text-4xl">Metro Max</h1>
         </a>
         <button data-collapse-toggle="mobile-menu" type="button" class="items-center justify-center ml-3 text-primary rounded-lg md:hidden w-10 h-10 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary" aria-controls="mobile-menu-2" aria-expanded="false">
@@ -106,7 +106,7 @@ session_start();
             <li>
                 <!-- bouton se connecter / s'inscrire version mobile -->
                 <div class="flex flex-col items-center md:hidden">
-                <a href="#" class=""><img class="h-15 w-auto" src="./assets/img/login.png" alt="login image"></a>
+                <a href="#" class=""><img class="h-15 w-auto" src="/metromax/assets/img/login.png" alt="login image"></a>
                 <a href="#" class="-mx-3 rounded-lg py-5 px-3 text-base leading-7 text-primary font-impact uppercase">Se connecter / S'inscrire</a>
                 </div>
             </li>
@@ -130,7 +130,7 @@ session_start();
 
     <!-- bouton se connecter / s'inscrire version tablette/desktop -->
     <div class="hidden md:flex flex-col items-center mr-3">
-            <a href="#" class=""><img class="h-16 w-auto" src="./assets/img/login.png" alt="login image"></a>
+            <a href="#" class=""><img class="h-16 w-auto" src="/metromax/assets/img/login.png" alt="login image"></a>
             <a href="#" class="-mx-3 rounded-lg px-3 text-base leading-7 text-primary font-impact uppercase">Se connecter / S'inscrire</a>
     </div>
   </div>

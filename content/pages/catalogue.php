@@ -44,7 +44,7 @@ session_start();
                 '5xl': '3.052rem',
                 },
             backgroundImage: {
-                'bg-cine': "url('./assets/img/cinema_home.jpg')",
+                'bg-cine': "url('/metromax/assets/img/cinema_home.jpg')",
             }
             }
         }
@@ -54,7 +54,7 @@ session_start();
 </head>
 <body>
     <?php
-    require_once("./content/include/navbar.php");
+    require_once("../include/navbar.php");
 
     // if (isset($_SESSION['message'])) {
     //     echo $_SESSION['message'];
@@ -62,10 +62,14 @@ session_start();
     // if (isset($_SESSION['message'])) {
     //     echo $_SESSION['gestion_admin'] . '<br>';
     // }
+?>
 
-    require_once("./content/pages/main.php");
+<div class="bg-bg-cine">
+    <h1>degrtyjfdhrth</h1>
+</div>
 
-    require_once("./content/include/footer.php");
+<?php
+    require_once("../include/footer.php");
     ?>
 
 
