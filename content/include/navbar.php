@@ -11,13 +11,13 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metro Max</title>
-    <link rel="stylesheet" href="./assets/styles/reset.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 <body>
 
 
-<header class="bg-white">
+<section class="fixed bg-white z-40 w-full">
 
 <!-- : version mobile first / version desktop gérée par l'ajout de "md:" -->
 
@@ -58,10 +58,7 @@ session_start();
                     <li>
                         <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-secondary">
                             <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg group-hover:bg-secondary">
-                            <svg class="h-6 w-6 text-primary group-hover:text-third" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
-                            </svg>
+                            <i class="items-center fa-solid fa-film h-8 w-8 text-primary group-hover:text-third"></i>
                         </div>
                         <div class="flex-auto">
                             <a href="#" class="block text-primary items-center gap-x-1 text-sm leading-6 font-impact uppercase group-hover:text-third">
@@ -135,7 +132,7 @@ session_start();
     </div>
   </div>
 </nav>
-</header>
+</section>
    
 
 </body>
