@@ -37,6 +37,10 @@ session_start();
                 '4xl': '2rem',
                 '5xl': '3.052rem',
                 },
+                backgroundImage: {
+                'bg-cine': "url('/metromax/assets/img/cinema-bg2.jpg')",
+                'bg-cine-mobile': "url('/metromax/assets/img/cinema_home.jpg')",
+            }
             }
         }
         }

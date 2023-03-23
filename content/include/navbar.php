@@ -24,7 +24,7 @@ session_start();
   <nav class="bg-bg1 items-center p-6 md:p-0 w-full" aria-label="Global">
   <div class="flex flex-row-reverse md:flex-row flex-wrap items-center justify-around md:justify-between ">
     <div class="flex items-center">
-        <a href="#" class="-m-1.5 p-1.5 flex flex-row items-center">
+        <a href="/metromax/index.php" class="-m-1.5 p-1.5 flex flex-row items-center">
             <span class="sr-only">Metro Max</span>
             <img class="h-20 w-auto" src="/metromax/assets/img/logo_simple.png" alt="logo metromax">
             <h1 class="font-bungee text-primary text-4xl">Metro Max</h1>
@@ -103,8 +103,19 @@ session_start();
             <li>
                 <!-- bouton se connecter / s'inscrire version mobile -->
                 <div class="flex flex-col items-center md:hidden">
-                <a href="#" class=""><img class="h-15 w-auto" src="/metromax/assets/img/login.png" alt="login image"></a>
-                <a href="#" class="-mx-3 rounded-lg py-5 px-3 text-base leading-7 text-primary font-impact uppercase">Se connecter / S'inscrire</a>
+                <a href="/metromax/content/pages/espace-user.php" class=""><img class="h-15 w-auto" src="/metromax/assets/img/login.png" alt="login image"></a>
+                <?php
+                    if (isset($_SESSION['id_user']))
+                    {
+                    ?>
+                        <p class="-mx-3 rounded-lg px-3 text-base leading-7 text-primary font-impact uppercase">Bonjour, <?= $_SESSION['prenom_user'] . ' !' . '<br>' . '<a class="underline" href="/metromax/content/src/deconnexion.php">Se déconnecter</a>'?></p>
+                    <?php
+                    }
+                    else { ?>
+                    <a href="/metromax/content/pages/connexion.php" class="-mx-3 rounded-lg py-5 px-3 text-base leading-7 text-primary font-impact uppercase">Se connecter / S'inscrire</a>
+                    <?php
+                    }
+                ?>
                 </div>
             </li>
         </ul>
@@ -126,10 +137,25 @@ session_start();
     </form>
 
     <!-- bouton se connecter / s'inscrire version tablette/desktop -->
+
     <div class="hidden md:flex flex-col items-center mr-3">
-            <a href="#" class=""><img class="h-16 w-auto" src="/metromax/assets/img/login.png" alt="login image"></a>
-            <a href="#" class="-mx-3 rounded-lg px-3 text-base leading-7 text-primary font-impact uppercase">Se connecter / S'inscrire</a>
+            <a href="/metromax/content/pages/espace-user.php" class=""><img class="h-16 w-auto" src="/metromax/assets/img/login.png" alt="login image"></a>
+
+            <?php
+            if (isset($_SESSION['id_user']))
+            {
+            ?>
+                <p class="-mx-3 rounded-lg px-3 text-base leading-7 text-primary font-impact uppercase">Bonjour, <?= $_SESSION['prenom_user'] . ' !' . '<br>' . '<a class="underline" href="/metromax/content/src/deconnexion.php">Se déconnecter</a>'?></p>
+            <?php
+            }
+            else { ?> 
+                <a href="/metromax/content/pages/connexion.php" class="-mx-3 rounded-lg px-3 text-base leading-7 text-primary font-impact uppercase">Se connecter / S'inscrire</a>
+            <?php
+            }?>
     </div>
+
+
+
   </div>
 </nav>
 </section>

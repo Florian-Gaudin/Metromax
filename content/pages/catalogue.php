@@ -16,7 +16,6 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/metromax/assets/styles/catalogue.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <script>
         tailwind.config = {
@@ -45,7 +44,7 @@ session_start();
                 },
             backgroundImage: {
                 'bg-cine': "url('/metromax/assets/img/cinema-bg2.jpg')",
-                'bg-cine-mobile': "url('./assets/img/cinema_home.jpg')",
+                'bg-cine-mobile': "url('/metromax/assets/img/cinema_home.jpg')",
             }
             }
         }
@@ -55,18 +54,9 @@ session_start();
 </head>
 
 <body>
-    <?php
-    require_once("../include/navbar.php");
+    <?php require_once("../include/navbar.php"); ?>
 
-    // if (isset($_SESSION['message'])) {
-    //     echo $_SESSION['message'];
-    // }
-    // if (isset($_SESSION['message'])) {
-    //     echo $_SESSION['gestion_admin'] . '<br>';
-    // }
-    ?>
-
-    <h1 class="font-bungee py-5 text-5xl pt-[200px] md:pt-[300px] lg:pt-[120px] text-primary text-center bg-bg2">Notre catalogue<br>Films et séries</h1>
+    <h1 class="font-bungee py-5 text-5xl pt-[200px] md:pt-[300px] lg:pt-[140px] text-primary text-center bg-bg2">Notre catalogue<br>Films et séries</h1>
     <div class="bg-bg-cine-mobile md:bg-bg-cine bg-fixed bg-[left_5rem] bg-[bottom-8rem] md:bg-cover py-20">
         <div class="w-4/5 mx-auto">
             <h2 class="font-impact md:pt-[130px] md:pb-[40px] text-3xl text-secondary uppercase">Rechercher un film ou une série</h2> 

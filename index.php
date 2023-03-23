@@ -1,8 +1,6 @@
-<!-- <?php
-
+<?php
 session_start();
-
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,13 +51,6 @@ session_start();
 <body>
     <?php
     require_once("./content/include/navbar.php");
-
-    // if (isset($_SESSION['message'])) {
-    //     echo $_SESSION['message'];
-    // }
-    // if (isset($_SESSION['message'])) {
-    //     echo $_SESSION['gestion_admin'] . '<br>';
-    // }
 
     require_once("./content/pages/main.php");
 

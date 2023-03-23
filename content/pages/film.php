@@ -44,7 +44,7 @@ session_start();
                 '5xl': '3.052rem',
                 },
             backgroundImage: {
-                'bg-cine': "url('/metromax/assets/img/cinema-bg2.jpg')",
+                'bg-cine': "url('./assets/img/cinema-bg2.jpg')",
             }
             }
         }
@@ -56,16 +56,9 @@ session_start();
 <body>
     <?php
     require_once("../include/navbar.php");
-
-    // if (isset($_SESSION['message'])) {
-    //     echo $_SESSION['message'];
-    // }
-    // if (isset($_SESSION['message'])) {
-    //     echo $_SESSION['gestion_admin'] . '<br>';
-    // }
     ?>
 
-    <h1 class="font-bungee py-5 text-5xl pt-[200px] md:pt-[300px] lg:pt-[120px] text-primary text-center bg-bg2">Votre film :<br>Films et séries</h1>
+    <h1 class="font-bungee py-5 text-5xl pt-[200px] md:pt-[300px] lg:pt-[140px] text-primary text-center bg-bg2">Votre film :<br>Films et séries</h1>
     <div class="bg-bg-cine bg-fixed bg-[left_5rem] bg-[bottom-8rem] md:bg-cover py-20">
 
         <div class="w-4/5 mx-auto flex bg-third p-5 m-5 flex-col md:flex-row">

@@ -1,6 +1,6 @@
-<!-- <?php
+<?php
 session_start();
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,6 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/metromax/assets/styles/catalogue.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <script>
         tailwind.config = {
@@ -42,8 +41,8 @@ session_start();
                 '5xl': '3.052rem',
                 },
             backgroundImage: {
-                'bg-cine': "url('./assets/img/cinema-bg2.jpg')",
-                'bg-cine-mobile': "url('./assets/img/cinema_home.jpg')",
+                'bg-cine': "url('/metromax/assets/img/cinema-bg2.jpg')",
+                'bg-cine-mobile': "url('/metromax/assets/img/cinema_home.jpg')",
             }
             }
         }
@@ -55,39 +54,48 @@ session_start();
 
 
 
-<?php require_once("../include/navbar.php");
+<?php require_once("../include/navbar.php"); ?>
 
+<div class="bg-bg2 font-bungee py-5 pt-[200px] md:pt-[300px] lg:pt-[120px] text-primary text-center">
+    <h1 class="text-5xl">Connectez-vous</h1>
+    <h2 class="text-3xl pt-3">pour accéder à vos films préférés&nbsp;!</h2>
+</div>
 
-// if (isset($_SESSION['message'])) {
-//         echo $_SESSION['message'] . '<br>';
-//     }  
-// if ($_SESSION['mail_utilisateur']){
-//   echo  '<a href="../pages/espaceperso.php"> Modifier mes informations de connexion<a>';
+<?php
+if (isset($_SESSION['message'])) {
+    echo $_SESSION['message'] . '<br>';
+}  
+// if ($_SESSION['mail_user']){
+// echo  '<a href="../pages/espaceperso.php"> Modifier mes informations de connexion<a>';
 // }
 // else {
-//   echo 'Bonjour, veuillez vous connecter';
+// echo 'Bonjour, veuillez vous connecter';
 // }
 ?>
-
-
-    <header class="bg-bg2">
-        <h1 class="font-bungee py-5 pt-[200px] md:pt-[300px] lg:pt-[120px] text-5xl text-primary text-center">Se connecter</h1>
-    </header>
-    <div class="bg-bg-cine-mobile md:bg-bg-cine bg-[center_left_62rem] md:bg-[left_5rem] md:bg-[bottom-8rem] bg-fixed md:bg-cover">
-
-    <form>
-        <div class="mb-6">
-            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-            <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com" required>
+    
+    <div class="bg-bg-cine-mobile md:bg-bg-cine bg-[center_left_62rem] md:bg-[left_5rem] md:bg-[bottom-8rem] bg-fixed md:bg-cover flex justify-center py-[50px]">
+        <div class="mx-5 md:mx-0 md:w-full md:max-w-sm p-4 bg-card bg-blend-hard-light bg-opacity-80 border border-gray-200 rounded-lg shadow sm:p-8 font-impact font-medium uppercase">
+            <div class="mix-blend-normal">
+                <h4 class ="text-bg1 text-center text-2xl md:text-3xl">Entrez vos identifiants de connexion&nbsp;:</h4>
+                <form class="" method="POST" action="/metromax/content/src/traitement-connexion.php">
+                    <div class="my-6">
+                        <input type="email" name="email" id="email" class="bg-primary border border-gray-300 text-bg1 font-impact text-md placeholder:text-impact placeholder:text-bg1 placeholder:text-bold placeholder:uppercase rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-12 p-4" placeholder="Votre mail*" required>
+                    </div>
+                    <div class="my-6">
+                        <input type="password" name="password" id="password" class="bg-primary border border-gray-300 text-bg1 font-impact text-md placeholder:text-impact placeholder:text-bg1 placeholder:text-bold placeholder:uppercase rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-12 p-4" placeholder="Votre mot de passe*" required>
+                    </div>
+                    <button type="submit" name="submit" class="w-9/12 text-third text-2xl rounded-lg bg-secondary text-lg px-3 md:px-5 py-4 w-full text-center uppercase hover:text-secondary hover:bg-third">Se connecter</button>
+                    <p class="flex justify-end mt-5 italic text-sm">* Champs obligatoires</p>
+                    <a href="./inscription.php" class="flex justify-end mt-5 underline">Pas encore inscrit ?</a>
+                </form>
+            </div>
         </div>
-        <div class="mb-6">
-            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-            <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-        </div>
-        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Se connecter</button>
-    </form>
-
     </div>
+
+
+
+
+
 
 <?php require_once("../include/footer.php");?>
 </body>

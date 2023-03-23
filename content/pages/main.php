@@ -52,7 +52,7 @@ session_start();
 <!--  OFFRES MAIN CTA  -->
 <header class="bg-bg2">
 
-    <h1 class="font-bungee py-5 pt-[200px] md:pt-[300px] lg:pt-[120px] text-5xl text-primary text-center">Découvrez nos offres</h1>
+    <h1 class="font-bungee py-5 pt-[200px] md:pt-[300px] lg:pt-[140px] text-5xl text-primary text-center">Découvrez nos offres&nbsp;!</h1>
     <div class="bg-bg-cine-mobile md:bg-bg-cine bg-[center_left_62rem] md:bg-[left_5rem] md:bg-[bottom-8rem] bg-fixed md:bg-cover">
 
         <div class="flex flex-col md:flex-row justify-around">
