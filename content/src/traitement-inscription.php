@@ -57,10 +57,8 @@ if(isset($_POST['submit']))
             'id_role' => 1 ,            
         ]);
         $user["prenom_user"] = $_POST['prenom'] ;
-        $_SESSION['message'] = 'Bienvenue ' . $user["prenom_user"].', vous êtes à présent enregistré';
+        $_SESSION['msg_success_register'] = 'Bienvenue ' . $user["prenom_user"].', vous êtes enregistré.' . '<br>' . '<a class="underline" href="/metromax/content/pages/connexion.php">Cliquez pour vous connecter</a>';
         header("Location: /metromax/index.php");
-        unset($insertUser);
-        $conn=null;
       }
       }
       else {

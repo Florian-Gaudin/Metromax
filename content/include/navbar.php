@@ -142,7 +142,13 @@ session_start();
             <a href="/metromax/content/pages/espace-user.php" class=""><img class="h-16 w-auto" src="/metromax/assets/img/login.png" alt="login image"></a>
 
             <?php
-            if (isset($_SESSION['id_user']))
+            if (isset($_SESSION['msg_success_register'])) {
+            ?>
+                <p class="-mx-3 rounded-lg px-3 text-base leading-7 text-primary font-impact"><?= $_SESSION['msg_success_register'] ?></p>
+            <?php
+                session_destroy();
+            }
+            elseif (isset($_SESSION['id_user']))
             {
             ?>
                 <p class="-mx-3 rounded-lg px-3 text-base leading-7 text-primary font-impact uppercase">Bonjour, <?= $_SESSION['prenom_user'] . ' !' . '<br>' . '<a class="underline" href="/metromax/content/src/deconnexion.php">Se déconnecter</a>'?></p>

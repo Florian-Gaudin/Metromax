@@ -41,8 +41,7 @@ if(isset($_POST['submit']))
 
         // Vérification du rôle de l'utilisateur connecté
           if ($id_role == 2) {
-            $_SESSION['message'] = 'Bonjour Administrateur, vous êtes connecté avec le compte administrateur ' . $utilisateur['mail_user'];
-            $_SESSION['gestion_admin'] = ' <a href="pages/gestion_admin.php"> Admin </a> ';
+            $_SESSION['message_admin'] = 'Bonjour Administrateur, vous êtes connecté avec le compte administrateur ' . $utilisateur['mail_user'] . '<br>' . ' <a href="pages/gestion_admin.php"> Accès à la page de gestion admin </a> ';
             $_SESSION['mail_user'] = $_POST['email'];
             $_SESSION['mdp_user'] = $_POST['password'];
             $_SESSION['pseudo_user'] = $utilisateur['pseudo_user'];
@@ -53,8 +52,7 @@ if(isset($_POST['submit']))
           }
 
             elseif ($id_role == 1) {
-            $_SESSION['message'] = 'Bonjour '.$utilisateur["prenom_user"].', vous êtes connecté avec le compte ' . $utilisateur['mail_user'];
-            $_SESSION['gestion_admin'] = null;
+            $_SESSION['message_admin'] = null;
             $_SESSION['mail_user'] = $_POST['email'];
             $_SESSION['mdp_user'] = $_POST['password'];
             $_SESSION['pseudo_user'] = $utilisateur['pseudo_user'];

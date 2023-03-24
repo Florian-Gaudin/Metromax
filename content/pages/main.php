@@ -53,6 +53,13 @@ session_start();
 <header class="bg-bg2">
 
     <h1 class="font-bungee py-5 pt-[200px] md:pt-[300px] lg:pt-[140px] text-5xl text-primary text-center">Découvrez nos offres&nbsp;!</h1>
+    <?php
+        if (isset($_SESSION['message_admin'])) {
+        ?>
+        <p class="-mx-3 rounded-lg px-3 text-base leading-7 text-primary font-impact"><?= $_SESSION['message_admin'] ?></p>
+        <?php
+        }
+    ?>
     <div class="bg-bg-cine-mobile md:bg-bg-cine bg-[center_left_62rem] md:bg-[left_5rem] md:bg-[bottom-8rem] bg-fixed md:bg-cover">
 
         <div class="flex flex-col md:flex-row justify-around">

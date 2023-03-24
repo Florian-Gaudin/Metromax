@@ -60,18 +60,6 @@ session_start();
     <h1 class="text-5xl">Connectez-vous</h1>
     <h2 class="text-3xl pt-3">pour accéder à vos films préférés&nbsp;!</h2>
 </div>
-
-<?php
-if (isset($_SESSION['message'])) {
-    echo $_SESSION['message'] . '<br>';
-}  
-// if ($_SESSION['mail_user']){
-// echo  '<a href="../pages/espaceperso.php"> Modifier mes informations de connexion<a>';
-// }
-// else {
-// echo 'Bonjour, veuillez vous connecter';
-// }
-?>
     
     <div class="bg-bg-cine-mobile md:bg-bg-cine bg-[center_left_62rem] md:bg-[left_5rem] md:bg-[bottom-8rem] bg-fixed md:bg-cover flex justify-center py-[50px]">
         <div class="mx-5 md:mx-0 md:w-full md:max-w-sm p-4 bg-card bg-blend-hard-light bg-opacity-80 border border-gray-200 rounded-lg shadow sm:p-8 font-impact font-medium uppercase">

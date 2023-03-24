@@ -62,6 +62,14 @@ session_start();
 
                 <h1 class="font-bungee py-5 text-5xl pt-[200px] md:pt-[300px] lg:pt-[140px] text-primary text-center bg-bg2">Bienvenue sur<br>votre espace personnel</h1>
 
+                <?php
+                if (isset($_SESSION['message_update'])) {
+                ?>
+                <p class="-mx-3 rounded-lg px-3 text-base leading-7 text-secondary font-impact"><?= $_SESSION['message_update'] ?></p>
+                <?php
+                }
+                ?>
+
 
                 <div class="bg-bg-cine-mobile md:bg-bg-cine bg-[center_left_62rem] md:bg-[left_5rem] md:bg-[bottom-8rem] bg-fixed md:bg-cover flex flex-col items-center py-[50px]">
 
@@ -128,7 +136,7 @@ session_start();
                             <label for="modify_email2" class="lg:hidden">Confirmer votre nouvelle adresse mail</label>
                             <input id="modify_email2" type="email" name="modify_email2" placeholder="Confirmez votre nouvelle adresse mail*" required class="bg-primary border border-gray-300 text-bg1 font-impact text-md placeholder:text-impact placeholder:text-bg1 placeholder:text-bold placeholder:uppercase rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-12 p-4"/>
                             </div>
-                            <button type="submit_modify_mail" name="submit" class="w-9/12 text-third text-2xl rounded-lg bg-secondary text-lg px-3 md:px-5 py-4 w-full text-center uppercase hover:text-secondary hover:bg-third">
+                            <button type="submit" name="submit_modify_mail" class="w-9/12 text-third text-2xl rounded-lg bg-secondary text-lg px-3 md:px-5 py-4 w-full text-center uppercase hover:text-secondary hover:bg-third">
                             Valider la modification
                             </button>
                         </form>
@@ -157,7 +165,7 @@ session_start();
                                 <label for="modify_password2" class="lg:hidden">Confirmez votre nouveau mot de passe</label>
                                 <input id="modify_password2" type="password" name="modify_password2" placeholder="Confirmez votre nouveau mot de passe*" required class="bg-primary border border-gray-300 text-bg1 font-impact text-md placeholder:text-impact placeholder:text-bg1 placeholder:text-bold placeholder:uppercase rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-12 p-4"/>
                             </div>
-                            <button type="submit_modify_password" name="submit" class="w-9/12 text-third text-2xl rounded-lg bg-secondary text-lg px-3 md:px-5 py-4 w-full text-center uppercase hover:text-secondary hover:bg-third">
+                            <button type="submit" name="submit_modify_password" class="w-9/12 text-third text-2xl rounded-lg bg-secondary text-lg px-3 md:px-5 py-4 w-full text-center uppercase hover:text-secondary hover:bg-third">
                             Valider la modification
                             </button>
                         </form>

@@ -64,13 +64,7 @@ session_start();
 <?php
 if (isset($_SESSION['message'])) {
         echo $_SESSION['message'] . '<br>';
-    }  
-// if ($_SESSION['mail_user']){
-//   echo  '<a href="../pages/espaceperso.php"> Modifier mes informations de connexion<a>';
-// }
-// else {
-//   echo 'Veuillez réessayer votre inscription';
-// }
+    }
 ?>
 
     <div class="bg-bg-cine-mobile md:bg-bg-cine bg-[center_left_62rem] md:bg-[left_5rem] md:bg-[bottom-8rem] bg-fixed md:bg-cover flex justify-center py-[50px]">
