@@ -2,6 +2,10 @@
 
 session_start();
 
+
+
+                                                                                    //  MODIFICATION DE MAIL
+
 // Vérifier que tous les champs ont bien été remplis ET que l'utilisateur a bien écrit deux fois le même mail et le même mot de passe
 if(isset($_POST['submit_modify_mail']))
 {
@@ -41,7 +45,7 @@ if(!empty($formerMail) AND !empty($newMail) AND !empty($newMail2) AND $formerMai
         $newMail,
         $id_utilisateur,]);
 
-// Message si succès
+    // Message si succès
     $_SESSION['message_update'] = 'Vous êtes à présent enregistré avec votre nouveau mail ' . $newMail . '<br>' . 'Vous devrez vous reconnecter pour voir vos modifications';
     header("Location: /metromax/content/pages/espace-user.php");
     unset($update);
@@ -49,7 +53,7 @@ if(!empty($formerMail) AND !empty($newMail) AND !empty($newMail2) AND $formerMai
     exit();
     }
 
-// Vérifier que l'utilisateur entre bien correctement son ancien mail et son ancien mot de passe
+    // Vérifier que l'utilisateur entre bien correctement son ancien mail et son ancien mot de passe
     elseif ($_SESSION['mail_user'] != $formerMail) {
     $_SESSION['message_update'] = "Vous devez entrer votre ancien mail à l'identique";
     header("Location: /metromax/content/pages/espace-user.php");
@@ -75,6 +79,8 @@ if(!empty($formerMail) AND !empty($newMail) AND !empty($newMail2) AND $formerMai
     }
 }
 
+
+                                                                                    //  MODIFICATION DE MOT DE PASSE
 
 
 // Vérifier que tous les champs ont bien été remplis ET que l'utilisateur a bien écrit deux fois le même mail et le même mot de passe
@@ -153,5 +159,57 @@ if(!empty($formerPassword) AND !empty($newPassword) AND !empty($newPassword2) AN
     exit();
     }
 }
+
+
+                                                                                    //  MODIFICATION DE L'AVATAR
+
+
+// Vérifier que tous les champs ont bien été remplis ET que l'utilisateur a bien écrit deux fois le même mail et le même mot de passe
+if(isset($_POST['submit_modify_avatar'])){
+
+    if(!empty($_POST['avatar'])) {
+        $newAvatar = htmlspecialchars($_POST['avatar']);
+        $id_utilisateur = $_SESSION['id_user'];
+    
+       // Create connection
+       try {
+        $conn = new PDO(
+            'mysql:host=localhost;dbname=metromax;charset=utf8',
+            'root',
+            ''
+        );
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }
+        catch (Exception $e)
+        {
+        die('Erreur : ' . $e->getMessage());
+        }
+    
+        // Accéder aux données serveur
+        $userUpdate = $conn->prepare('SELECT * FROM avatar a INNER JOIN users u ON a.avatar_id = u.avatar_id WHERE id_user = ?');
+        $userUpdate->execute([$id_utilisateur]);
+        $utilisateur = $userUpdate->fetch();
+    
+    
+        // Ecriture de la requête
+        $request = 'UPDATE users SET avatar_id = ? WHERE id_user = ?';
+        $stmt = $conn->prepare($request);
+        $stmt->execute([
+            $newAvatar,
+            $id_utilisateur,]);
+    
+        // Message si succès
+        $_SESSION['message_update'] = 'Vous avez choisi et validé une nouvelle image de profil !<br>Vous devrez vous reconnecter pour voir vos modifications';
+        header("Location: /metromax/content/pages/espace-user.php");
+        unset($update);
+        $conn = null;
+        exit();
+        }
+
+    } else {
+        echo 'Choisissez un avatar';
+    }
+
+
 
 ?>

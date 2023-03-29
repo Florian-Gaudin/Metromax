@@ -29,6 +29,7 @@ if(isset($_POST['submit']))
     $prenom = htmlspecialchars($_POST['prenom']);
     $nom = htmlspecialchars($_POST['nom']);
     $pseudo = htmlspecialchars($_POST['pseudo']);
+    $default_avatar = '/metromax/assets/img/login.png';
 
     if (isset($_POST ['submit'])) {
     // Vérifier si le champ utilisateur 'mail' n'existe pas déjà dans la BDD
@@ -42,7 +43,7 @@ if(isset($_POST['submit']))
 }
       else {
           // Ecriture de la requête sur la BDD : ajouter un nouvel utilisateur
-        $insertUser = 'INSERT INTO users(mdp_user, nom_user, prenom_user, pseudo_user, mail_user, id_role) VALUES (:mdp_user, :nom_user, :prenom_user, :pseudo_user, :mail_user, :id_role)';
+        $insertUser = 'INSERT INTO users(mdp_user, nom_user, prenom_user, pseudo_user, mail_user, avatar_user, id_role) VALUES (:mdp_user, :nom_user, :prenom_user, :pseudo_user, :mail_user, :avatar_user, :id_role)';
         
         // Préparation
         $insertUser = $conn->prepare($insertUser);
@@ -54,15 +55,13 @@ if(isset($_POST['submit']))
             'prenom_user' => $prenom,
             'pseudo_user' => $pseudo,
             'mail_user' => $email,
+            'avatar_user' => $default_avatar,
             'id_role' => 1 ,            
         ]);
         $user["prenom_user"] = $_POST['prenom'] ;
         $_SESSION['msg_success_register'] = 'Bienvenue ' . $user["prenom_user"].', vous êtes enregistré.' . '<br>' . '<a class="underline" href="/metromax/content/pages/connexion.php">Cliquez pour vous connecter</a>';
         header("Location: /metromax/index.php");
       }
-      }
-      else {
-        die("erreur");
       }
     }
    }

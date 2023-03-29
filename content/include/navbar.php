@@ -139,7 +139,17 @@ session_start();
     <!-- bouton se connecter / s'inscrire version tablette/desktop -->
 
     <div class="hidden md:flex flex-col items-center mr-3">
-            <a href="/metromax/content/pages/espace-user.php" class=""><img class="h-16 w-auto" src="/metromax/assets/img/login.png" alt="login image"></a>
+            <?php
+            if (isset($_SESSION['avatar_url']))
+            {
+            ?>
+                <a href="/metromax/content/pages/espace-user.php" class=""><img class="h-16 w-auto" src="/metromax/assets/img/<?= $_SESSION['avatar_url']?> " alt="user profil image"></a>
+            <?php
+            }
+            else { ?> 
+                <a href="/metromax/content/pages/espace-user.php" class=""><img class="h-16 w-auto" src="/metromax/assets/img/login.png" alt="login image"></a>
+            <?php
+            }?>
 
             <?php
             if (isset($_SESSION['msg_success_register'])) {

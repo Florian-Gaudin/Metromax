@@ -26,7 +26,7 @@ if(isset($_POST['submit']))
     }
 
   // Accéder aux données serveur
-    $stmt = $conn->prepare('SELECT * FROM users WHERE mail_user = ?');
+    $stmt = $conn->prepare('SELECT * FROM avatar a INNER JOIN users u ON a.avatar_id = u.avatar_id WHERE mail_user = ?');
     $stmt->execute([$email]);
     $utilisateur = $stmt->fetch();
     $id_user = $utilisateur['id_user'];
@@ -35,19 +35,20 @@ if(isset($_POST['submit']))
 
     // Vérifier que les champs utilisateur et les données serveur correspondent
         if (password_verify($password, $utilisateur['mdp_user'])) {
-          $rolestmt = $conn->prepare('SELECT * FROM users WHERE id_user = ?');
+          $rolestmt = $conn->prepare('SELECT * FROM avatar a INNER JOIN users u ON a.avatar_id = u.avatar_id WHERE id_user = ?');
           $rolestmt->execute([$id_user]);
           $role = $rolestmt->fetchAll();
 
         // Vérification du rôle de l'utilisateur connecté
           if ($id_role == 2) {
-            $_SESSION['message_admin'] = 'Bonjour Administrateur, vous êtes connecté avec le compte administrateur ' . $utilisateur['mail_user'] . '<br>' . ' <a href="pages/gestion_admin.php"> Accès à la page de gestion admin </a> ';
+            $_SESSION['message_admin'] = 'Bonjour Administrateur, vous êtes connecté avec le compte administrateur ' . $utilisateur['mail_user'] . '<br>' . ' <a class="underline" href="/metromax/content/pages/gestion_admin.php"> Accès à la page de gestion admin </a> ';
             $_SESSION['mail_user'] = $_POST['email'];
             $_SESSION['mdp_user'] = $_POST['password'];
             $_SESSION['pseudo_user'] = $utilisateur['pseudo_user'];
             $_SESSION['prenom_user'] = $utilisateur['prenom_user'];
             $_SESSION['nom_user'] = $utilisateur['nom_user'];
             $_SESSION['id_user'] = $utilisateur['id_user'];
+            $_SESSION['avatar_url'] = $utilisateur['avatar_url'];
             header("Location: /metromax/index.php");
           }
 
@@ -59,6 +60,7 @@ if(isset($_POST['submit']))
             $_SESSION['prenom_user'] = $utilisateur['prenom_user'];
             $_SESSION['nom_user'] = $utilisateur['nom_user'];
             $_SESSION['id_user'] = $utilisateur['id_user'];
+            $_SESSION['avatar_url'] = $utilisateur['avatar_url'];
             header("Location: /metromax/index.php");
           }}
           
