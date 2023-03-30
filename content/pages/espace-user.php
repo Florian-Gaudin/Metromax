@@ -80,7 +80,7 @@ session_start();
                 if (isset($_SESSION['avatar_url']))
                 {
                 ?>
-                    <img class="h-30 flex justify-center" src="/metromax/assets/img/<?= $_SESSION['avatar_url']?> " alt="user profil image">
+                    <img class="h-30 flex justify-center rounded-full" src="/metromax/assets/img/<?= $_SESSION['avatar_url']?> " alt="user profil image">
                 <?php
                 }
                 else { ?> 
@@ -119,43 +119,58 @@ session_start();
                     </button>
                 </h2>
                 <div id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
-                    <div class="p-5 font-light border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                    <div class="p-5 font-light border border-b-0 border-gray-200">
                         <p class="mb-2 text-bg2 font-impact text-2xl">Choisissez une nouvelle image de profil :</p>
-                        <form class="p-5 flex justify-between w-100" action="/metromax/content/src/traitement-espace-user.php" method="POST" id="modify_avatar">
-                            <fieldset>
-                                <input type="radio" id="1" name="avatar" value="1">
-                                <label for="1"><img width="100px" src="/metromax/assets/img/avatar_shrek.jpg" alt=""></label>
+                        <form class="p-5 flex justify-center flex-wrap items-center w-100" action="/metromax/content/src/traitement-espace-user.php" method="POST" id="modify_avatar">
+                            <fieldset class="contents">
+                                <div class="flex items-center flex-col-reverse mt-4 mx-4">
+                                    <input type="radio" class="mt-1" id="1" name="avatar" value="1">
+                                    <label for="1"><img width="100px" src="/metromax/assets/img/avatar_shrek.jpg" alt=""></label>
+                                </div>
 
-                                <input type="radio" id="2" name="avatar" value="2">
-                                <label for="2"><img width="100px" src="/metromax/assets/img/avatar_fiona.jpg" alt=""></label>
+                                <div class="flex items-center flex-col-reverse mt-4 mx-4">
+                                    <input type="radio" class="mt-1" id="2" name="avatar" value="2">
+                                    <label for="2"><img width="100px" src="/metromax/assets/img/avatar_fiona.jpg" alt=""></label>
+                                </div>
 
-                                <input type="radio" id="3" name="avatar" value="3">
-                                <label for="3"><img width="100px" src="/metromax/assets/img/avatar_darkvador.jpg" alt=""></label>
+                                <div class="flex items-center flex-col-reverse mt-4 mx-4">
+                                    <input type="radio" class="mt-1" id="3" name="avatar" value="3">
+                                    <label for="3"><img width="100px" src="/metromax/assets/img/avatar_darkvador.jpg" alt=""></label>
+                                </div>
 
-                                <input type="radio" id="4" name="avatar" value="4">
-                                <label for="4"><img width="100px" src="/metromax/assets/img/avatar_harrypotter.jpg" alt=""></label>
+                                <div class="flex items-center flex-col-reverse mt-4 mx-4">
+                                    <input type="radio" class="mt-1" id="4" name="avatar" value="4">
+                                    <label for="4"><img width="100px" src="/metromax/assets/img/avatar_harrypotter.jpg" alt=""></label>
+                                </div>
 
-                                <input type="radio" id="5" name="avatar" value="5">
-                                <label for="5"><img width="100px" src="/metromax/assets/img/avatar_hermione.jpg" alt=""></label>
+                                <div class="flex items-center flex-col-reverse mt-4 mx-4">
+                                    <input type="radio" class="mt-1" id="5" name="avatar" value="5">
+                                    <label for="5"><img width="100px" src="/metromax/assets/img/avatar_hermione.jpg" alt=""></label>
+                                </div>
 
-                                <input type="radio" id="6" name="avatar" value="6">
-                                <label for="6"><img width="100px" src="/metromax/assets/img/avatar_jacquouille.jpg" alt=""></label>
+                                <div class="flex items-center flex-col-reverse mt-4 mx-4">
+                                    <input type="radio" class="mt-1" id="6" name="avatar" value="6">
+                                    <label for="6"><img width="100px" src="/metromax/assets/img/avatar_jacquouille.jpg" alt=""></label>
+                                </div>
 
-                                <input type="radio" id="7" name="avatar" value="7">
-                                <label for="7"><img width="100px" src="/metromax/assets/img/avatar_jenniferlawrence.jpg" alt=""></label>
+                                <div class="flex items-center flex-col-reverse mt-4 mx-4">
+                                    <input type="radio" class="mt-1" id="7" name="avatar" value="7">
+                                    <label for="7"><img width="100px" src="/metromax/assets/img/avatar_jenniferlawrence.jpg" alt=""></label>
+                                </div>
 
-                                <input type="radio" id="8" name="avatar" value="8">
-                                <label for="8"><img width="100px" src="/metromax/assets/img/avatar_leila.jpg" alt=""></label>
+                                <div class="flex items-center flex-col-reverse mt-4 mx-4">
+                                    <input type="radio" class="mt-1" id="8" name="avatar" value="8">
+                                    <label for="8"><img width="100px" src="/metromax/assets/img/avatar_leila.jpg" alt=""></label>
+                                </div>
 
-                                <input type="radio" id="9" name="avatar" value="9">
-                                <label for="9"><img width="100px" src="/metromax/assets/img/avatar_umathurman.jpg" alt=""></label>
-
-                                <button type="submit" name="submit_modify_avatar" class="w-9/12 text-third text-2xl rounded-lg bg-secondary text-lg px-3 md:px-5 py-4 w-full text-center uppercase hover:text-secondary hover:bg-third">
-                                    Choisir
-                                </button>
+                                <div class="flex items-center flex-col-reverse mt-4 mx-4">
+                                    <input type="radio" class="mt-1" id="9" name="avatar" value="9">
+                                    <label for="9"><img width="100px" src="/metromax/assets/img/avatar_umathurman.jpg" alt=""></label>
+                                </div>
                             </fieldset>
-                                
-
+                            <button type="submit" name="submit_modify_avatar" class="w-full mt-4 text-third text-2xl rounded-lg bg-secondary text-lg px-3 md:px-5 py-4 text-center uppercase hover:text-secondary hover:bg-third">
+                            Choisir
+                            </button>
                         </form>
                     </div>
                 </div>

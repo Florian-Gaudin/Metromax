@@ -206,10 +206,11 @@ if(isset($_POST['submit_modify_avatar'])){
         exit();
         }
 
-    } else {
-        echo 'Choisissez un avatar';
+    else {
+        $_SESSION['message_update'] = 'Veuillez choisir un avatar';
+        header("Location: /metromax/content/pages/espace-user.php");
     }
-
+}
 
 
 ?>

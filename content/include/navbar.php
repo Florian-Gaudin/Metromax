@@ -143,7 +143,7 @@ session_start();
             if (isset($_SESSION['avatar_url']))
             {
             ?>
-                <a href="/metromax/content/pages/espace-user.php" class=""><img class="h-16 w-auto" src="/metromax/assets/img/<?= $_SESSION['avatar_url']?> " alt="user profil image"></a>
+                <a href="/metromax/content/pages/espace-user.php" class=""><img class="h-16 w-auto rounded-full" src="/metromax/assets/img/<?= $_SESSION['avatar_url']?> " alt="user profil image"></a>
             <?php
             }
             else { ?> 
