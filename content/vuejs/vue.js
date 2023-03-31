@@ -13,6 +13,21 @@ const vue = new Vue({
     };
   },
   computed: {
+    getLikeCookie() {
+      // const cookieValue = document.cookie
+      // .split(";")
+      // .find((row) => row.startsWith(' like='))
+      // ?.split("=")[1];
+      // let cookie = JSON.parse(cookieValue);
+      // console.log(cookie);
+
+
+      let cookieValue = $cookies.get('like');
+      cookieValue == null ? this.liked = [] : this.liked = cookieValue
+      },
+
+
+    
     search() {
       return this.films.filter((film) => {
         return (
@@ -55,10 +70,7 @@ const vue = new Vue({
       return this.search;
     },
   },
-  getLikeCookie() {
-    let cookieValue = JSON.parse($cookies.get('like'));
-    cookieValue == null ? this.liked = [] : this.liked = cookieValue
-  },
+
   methods: {
     getImgUrl(pic) {
       return "/metromax/assets/img/" + pic;
@@ -81,14 +93,14 @@ const vue = new Vue({
       this.anneeSelected = "";
     },
     setLikeCookie() {
-      document.addEventListener('input', () => {
+      document.addEventListener('input', (e) => {
+        if (e.target.classList.contains('vuemodelliked')) {
         setTimeout(() => {
-        $cookies.set('like', JSON.stringify(this.liked))}, 600);
-      })
+        $cookies.set('like', this.liked)}, 600);
+      }})
     },
   },
   mounted() {
-    this.getLikeCookie;
     axios
       .get("../../content/vuejs/controllers/getData.php")
       .then((res) => res.data)
@@ -101,8 +113,12 @@ const vue = new Vue({
             this.genreList.push(this.films[i].genre_film);
           }
         }
-      });
-
+      })
+      .then(() => {
+        this.getLikeCookie;
+      }
+      );
+      
     setTimeout(() => {
       let arr = this.genreList.sort();
       for (let i = 0; i < arr.length; i++) {
@@ -112,5 +128,6 @@ const vue = new Vue({
         });
       }
     }, 500);
+    
   },
 }).$mount("#vue-app");

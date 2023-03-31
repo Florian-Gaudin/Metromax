@@ -38,7 +38,7 @@
                       <td>' . $row['annee_film'] . '</td>
                       <td>' . $row['titre_film'] . '</td>
                       <td>' . $row['resume_film'] . '</td>
-                      <td><img style="width: 70px" src="' . $row['affiche_film'] . '"></td>
+                      <td><img style="width: 70px" src="/metromax/assets/img/' . $row['affiche_film'] . '"></td>
                       <td><iframe width="200" height="" src="' . $row['url_ba_film'] . '" title="Bande annonce - ' . $row['titre_film'] . '" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></td>
                       <td>' . $row['genre_film'] . '</td>
                       <td>

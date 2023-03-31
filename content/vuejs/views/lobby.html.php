@@ -117,7 +117,7 @@
             <div class="text-right mb-5">
                 <div class="like-container">
                   <label v-bind:for="film.id_film" class="">
-                    <input type="checkbox" name="checkbox" v-bind:id="film.id_film" :value=film.id_film v-model="liked" @click="setLikeCookie()" class="hidden peer">
+                    <input type="checkbox" name="checkbox" v-bind:id="film.id_film" :value=film.id_film v-model="liked" @click="setLikeCookie()" class="hidden peer vuemodelliked">
                     <i class="fas fa-heart mr-3 text-3xl duration-75 cursor-pointer hover:scale-125 hover:text-hearthover peer-checked:text-heartchecked"></i>
                   </label>
                 </div>
