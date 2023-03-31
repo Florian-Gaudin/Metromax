@@ -28,6 +28,8 @@ session_start();
                 secondary:'#E5941A',
                 third :'#2C5C59',
                 card : '#d9d9d9',
+                hearthover : 'rgba(251, 38, 38, 0.5)',
+                heartchecked : '#fb2626',
             },
             fontFamily: {
                 'bungee': ['"Bungee Shade"', 'cursive'],
@@ -68,6 +70,7 @@ session_start();
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-cookies@1.8.3/vue-cookies.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
 <script src="/metromax/content/vuejs/vue.js"></script>
 </body>

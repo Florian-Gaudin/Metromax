@@ -1,78 +1,116 @@
 const vue = new Vue({
-    data: () => {
-      return {
-        films: [],
-        // countryList: [],
-        inputType: "",
-        searchKey: "",
-    //     countryOption: [],
-    //     countrySelected: "",
-    //     grapesRadio: [
-    //       { name: "Pinot Noir" },
-    //       { name: "Sauvignon" },
-    //       { name: "Merlot" },
-    //       { name: "Chardonnay" },
-    //     ],
-    //     grapesSelected: "",
-      };
+  data: () => {
+    return {
+      films: [],
+      genreList: [],
+      inputType: "",
+      searchKey: "",
+      genreOption: [],
+      genreSelected: "",
+      ascending: true,
+      sortBy: "alphabetical",
+      liked: [],
+    };
+  },
+  computed: {
+    search() {
+      return this.films.filter((film) => {
+        return (
+          film.titre_film
+            .toLowerCase()
+            .includes(this.searchKey.toLowerCase()) &&
+          film.genre_film
+            .toLowerCase()
+            .includes(this.genreSelected.toLowerCase())
+        );
+      });
     },
-    computed: {
-      search() {
-        return this.films.filter((film) => {
-          return (
-            film.titre_film.toLowerCase().includes(this.searchKey.toLowerCase())
-            // &&
-            // film.country
-            //   .toLowerCase()
-            //   .includes(this.countrySelected.toLowerCase()) &&
-            // wine.grapes.toLowerCase().includes(this.grapesSelected.toLowerCase())
-          );
+
+    filteredFilms() {
+      // Sort by alphabetical order
+      this.search.sort((a, b) => {
+        if (this.sortBy == "alphabetical") {
+          let fa = a.titre_film.toLowerCase(),
+            fb = b.titre_film.toLowerCase();
+
+          if (fa < fb) {
+            return -1;
+          }
+          if (fa > fb) {
+            return 1;
+          }
+          return 0;
+
+          // Sort by year
+        } else if (this.sortBy == "chronological") {
+          return a.annee_film - b.annee_film;
+        }
+      });
+
+      // Show sorted array in descending or ascending order
+      if (!this.ascending) {
+        this.search.reverse();
+      }
+
+      return this.search;
+    },
+  },
+  getLikeCookie() {
+    let cookieValue = JSON.parse($cookies.get('like'));
+    cookieValue == null ? this.liked = [] : this.liked = cookieValue
+  },
+  methods: {
+    getImgUrl(pic) {
+      return "/metromax/assets/img/" + pic;
+    },
+    getBandeAnnonceUrl(url) {
+      return url;
+    },
+    getTitre(titre) {
+      return "Bande-annonce " + titre;
+    },
+    searchInput(arg) {
+      this.inputType = arg;
+    },
+    removeItem(id) {
+      this.$delete(this.films, id);
+    },
+    cancelSearch() {
+      this.searchKey = "";
+      this.genreSelected = "";
+      this.anneeSelected = "";
+    },
+    setLikeCookie() {
+      document.addEventListener('input', () => {
+        setTimeout(() => {
+        $cookies.set('like', JSON.stringify(this.liked))}, 600);
+      })
+    },
+  },
+  mounted() {
+    this.getLikeCookie;
+    axios
+      .get("../../content/vuejs/controllers/getData.php")
+      .then((res) => res.data)
+      .then((res) => {
+        this.films = res;
+      })
+      .then(() => {
+        for (let i = 0; i <= this.films.length; i++) {
+          if (!this.genreList.includes(this.films[i].genre_film)) {
+            this.genreList.push(this.films[i].genre_film);
+          }
+        }
+      });
+
+    setTimeout(() => {
+      let arr = this.genreList.sort();
+      for (let i = 0; i < arr.length; i++) {
+        this.genreOption.push({
+          name: arr[i],
+          id: arr[i],
         });
-      },
-    },
-    methods: {
-      getImgUrl(pic) {
-        return "/metromax/assets/img/" + pic;
-      },
-      getBandeAnnonceUrl(url) {
-        return url;
-      },
-    //   searchInput(arg) {
-    //     this.inputType = arg;
-    //   },
-      removeItem(id) {
-        this.$delete(this.films, id);
-      },
-    //   cancelSearch() {
-    //     this.searchKey = "";
-    //     this.countrySelected = "";
-    //     this.grapesSelected = "";
-    //   },
-    },
-    mounted() {
-      axios
-        .get("../../content/vuejs/controllers/getData.php")
-        .then((res) => res.data)
-        .then((res) => {
-          this.films = res;
-        })
-        // .then(() => {
-        //   for (let i = 0; i <= this.films.length; i++) {
-        //     if (!this.countryList.includes(this.films[i].country)) {
-        //       this.countryList.push(this.films[i].country);
-        //     }
-        //   }
-        // });
-  
-    //   setTimeout(() => {
-    //     let arr = this.countryList.sort();
-    //     for (let i = 0; i < arr.length; i++) {
-    //       this.countryOption.push({
-    //         name: arr[i],
-    //         id: arr[i],
-    //       });
-    //     }
-    //   }, 500);
-    },
-  }).$mount("#vue-app");
-  
+      }
+    }, 500);
+  },
+}).$mount("#vue-app");
