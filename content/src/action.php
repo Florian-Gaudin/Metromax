@@ -41,7 +41,7 @@
                         <td>' . $row['nom_user'] . '</td>
                         <td>' . $row['prenom_user'] . '</td>
                         <td>' . $role2 . '</td>
-                        <td><img width="100px" src="/metromax/assets/img/' . $row['avatar_url'] . '" alt="profil image"></td>
+                        <td><img width="100px" src="/metromax/assets/upload/' . $row['avatar_url'] . '" alt="profil image"></td>
                         <td>
                           <a href="#" id="' . $row['id_user'] . '" class="btn btn-success btn-sm rounded-pill py-0 editLink" data-toggle="modal" data-target="#editUserModal">Editer</a>
   

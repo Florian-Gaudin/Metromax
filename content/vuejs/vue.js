@@ -14,20 +14,10 @@ const vue = new Vue({
   },
   computed: {
     getLikeCookie() {
-      // const cookieValue = document.cookie
-      // .split(";")
-      // .find((row) => row.startsWith(' like='))
-      // ?.split("=")[1];
-      // let cookie = JSON.parse(cookieValue);
-      // console.log(cookie);
-
-
       let cookieValue = $cookies.get('like');
       cookieValue == null ? this.liked = [] : this.liked = cookieValue
       },
 
-
-    
     search() {
       return this.films.filter((film) => {
         return (
@@ -78,6 +68,9 @@ const vue = new Vue({
     getBandeAnnonceUrl(url) {
       return url;
     },
+    getUrlFilm(url) {
+      return "/metromax/content/pages/film.php?idFilm=" + url;
+    },
     getTitre(titre) {
       return "Bande-annonce " + titre;
     },
@@ -114,12 +107,12 @@ const vue = new Vue({
           }
         }
       })
-      .then(() => {
-        this.getLikeCookie;
-      }
-      );
+
       
     setTimeout(() => {
+      //récupérer les cookies
+      this.getLikeCookie;
+      //récupérer les genres de film en bdd et les afficher dans la dropdown list
       let arr = this.genreList.sort();
       for (let i = 0; i < arr.length; i++) {
         this.genreOption.push({
@@ -127,7 +120,7 @@ const vue = new Vue({
           id: arr[i],
         });
       }
-    }, 500);
+    }, 700);
     
   },
 }).$mount("#vue-app");

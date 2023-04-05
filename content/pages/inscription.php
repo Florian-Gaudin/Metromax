@@ -85,6 +85,12 @@ if (isset($_SESSION['message'])) {
                         <input type="email" id="email" name="email" class="bg-primary border border-gray-300 text-bg1 font-impact placeholder:text-xs placeholder:md:text-base placeholder:text-impact placeholder:text-bg1 placeholder:text-bold placeholder:uppercase rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-3 md:pl-8 p-4" placeholder="Entrez votre adresse mail*" required>
                     </div>
                     <div class="my-6">
+                        <p class="lowercase"><span class="uppercase">V</span>otre mot de passe doit contenir au minimum : <br>
+                            - 8 caractères, <br>
+                            - une minuscule,<br>
+                            - une majuscule,<br>
+                            - un chiffre,<br>
+                            - et un caractère spécial</p>
                         <input type="password" id="password" name="password" class="bg-primary border border-gray-300 text-bg1 font-impact placeholder:text-xs placeholder:md:text-base placeholder:text-impact placeholder:text-bg1 placeholder:text-bold placeholder:uppercase rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-3 md:pl-8 p-4" placeholder="Choisissez votre votre mot de passe*" required>
                     </div>
                     <div class="my-6">

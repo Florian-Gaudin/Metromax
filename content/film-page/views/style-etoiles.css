@@ -1,0 +1,77 @@
+@-webkit-keyframes dance {
+    0% {
+      transform: rotate(-5deg);
+    }
+    50% {
+      transform: rotate(5deg);
+    }
+    100% {
+      transform: rotate(-5deg);
+    }
+  }
+  @keyframes dance {
+    0% {
+      transform: rotate(-5deg);
+    }
+    50% {
+      transform: rotate(5deg);
+    }
+    100% {
+      transform: rotate(-5deg);
+    }
+  }
+  .star-rating {
+    font-size: 40px;
+    padding: 0.25em 0.375em;
+    display: inline-flex;
+    flex-flow: row-reverse;
+    overflow: hidden;
+    border-radius: 0.75em;
+    background-color: white;
+  }
+  .star-rating input {
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+    width: 1em;
+    height: 1em;
+    float: left;
+    text-align: center;
+    line-height: 1em;
+  }
+  .star-rating input:before,
+  .star-rating input:after {
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+  }
+  .star-rating input:before {
+    content: "";
+    background-color: white;
+  }
+  .star-rating input:after {
+    content: "\f005";
+    font-family: FontAwesome;
+    color: #eee;
+    transition: color 0.2s;
+  }
+  .star-rating input:checked {
+    border-color: white;
+  }
+  .star-rating input:checked:after,
+  .star-rating input:checked ~ input:after {
+    color: #fc0;
+    -webkit-animation: 0.5s dance infinite;
+            animation: 0.5s dance infinite;
+  }
+
+  /* .star-rating .star0:checked, .star-rating .star0:checked ~ input:after{
+    color: #eee;
+  }
+  #star0 {
+  color: #eee;
+  } */
+  

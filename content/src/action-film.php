@@ -17,7 +17,6 @@
     $input_film = $util->testInput($_POST['url_ba_film']);
     $url_ba_film = str_replace("watch?v=", "embed/", $input_film);
 
-    //$url_ba_film = $util->testInput($_POST['url_ba_film']);
     $genre = $util->testInput($_POST['genre']);
 
     if ($db->insert($annee, $titre, $resume, $affiche, $url_ba_film, $genre)) {

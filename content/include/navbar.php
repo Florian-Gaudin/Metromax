@@ -103,12 +103,12 @@ session_start();
             <li>
                 <!-- bouton se connecter / s'inscrire version mobile -->
                 <div class="flex flex-col items-center md:hidden">
-                <a href="/metromax/content/pages/espace-user.php" class=""><img class="h-15 w-auto" src="/metromax/assets/img/login.png" alt="login image"></a>
+                <a href="/metromax/content/pages/espace-user.php" class=""><img class="h-15 w-auto" src="/metromax/assets/upload/<?= $_SESSION['avatar_url']?>" alt="login image"></a>
                 <?php
                     if (isset($_SESSION['id_user']))
                     {
                     ?>
-                        <p class="-mx-3 rounded-lg px-3 text-base leading-7 text-primary font-impact uppercase">Bonjour, <?= $_SESSION['prenom_user'] . ' !' . '<br>' . '<a class="underline" href="/metromax/content/src/deconnexion.php">Se déconnecter</a>'?></p>
+                        <p class="-mx-3 rounded-lg px-3 text-base leading-7 text-primary font-impact uppercase">Bonjour, <?= $_SESSION['pseudo_user'] . ' !' . '<br>' . '<a class="underline" href="/metromax/content/src/deconnexion.php">Se déconnecter</a>'?></p>
                     <?php
                     }
                     else { ?>
@@ -143,11 +143,11 @@ session_start();
             if (isset($_SESSION['avatar_url']))
             {
             ?>
-                <a href="/metromax/content/pages/espace-user.php" class=""><img class="h-16 w-auto rounded-full" src="/metromax/assets/img/<?= $_SESSION['avatar_url']?> " alt="user profil image"></a>
+                <a href="/metromax/content/pages/espace-user.php" class=""><img class="h-16 w-auto rounded-full" src="/metromax/assets/upload/<?= $_SESSION['avatar_url']?> " alt="user profil image"></a>
             <?php
             }
             else { ?> 
-                <a href="/metromax/content/pages/espace-user.php" class=""><img class="h-16 w-auto" src="/metromax/assets/img/login.png" alt="login image"></a>
+                <a href="/metromax/content/pages/espace-user.php" class=""><img class="h-16 w-auto" src="/metromax/assets/upload/login.png" alt="login image"></a>
             <?php
             }?>
 
@@ -161,7 +161,7 @@ session_start();
             elseif (isset($_SESSION['id_user']))
             {
             ?>
-                <p class="-mx-3 rounded-lg px-3 text-base leading-7 text-primary font-impact uppercase">Bonjour, <?= $_SESSION['prenom_user'] . ' !' . '<br>' . '<a class="underline" href="/metromax/content/src/deconnexion.php">Se déconnecter</a>'?></p>
+                <p class="-mx-3 rounded-lg px-3 text-base leading-7 text-primary font-impact uppercase">Bonjour, <?= $_SESSION['pseudo_user'] . ' !' . '<br>' . '<a class="underline flex flex-col text-center" href="/metromax/content/src/deconnexion.php">Se déconnecter</a>'?></p>
             <?php
             }
             else { ?> 

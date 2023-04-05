@@ -41,7 +41,7 @@ if(isset($_POST['submit']))
 
         // Vérification du rôle de l'utilisateur connecté
           if ($id_role == 2) {
-            $_SESSION['message_admin'] = 'Bonjour Administrateur, vous êtes connecté avec le compte administrateur ' . $utilisateur['mail_user'] . '<br>' . ' <a class="underline" href="/metromax/content/pages/gestion_admin.php"> Accès à la page de gestion admin </a> ';
+            $_SESSION['message_admin'] = 'Bonjour, vous êtes connecté avec le compte administrateur ' . $utilisateur['mail_user'] . '<br>' . ' <a class="underline" href="/metromax/content/pages/gestion_admin.php"> Accès à la page de gestion admin </a> ';
             $_SESSION['mail_user'] = $_POST['email'];
             $_SESSION['mdp_user'] = $_POST['password'];
             $_SESSION['pseudo_user'] = $utilisateur['pseudo_user'];

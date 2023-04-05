@@ -212,5 +212,4 @@ if(isset($_POST['submit_modify_avatar'])){
     }
 }
 
-
 ?>
